@@ -1,4 +1,0 @@
-cangarganta
-===========
-
-Web Project CanGarganta
