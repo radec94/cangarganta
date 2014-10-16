@@ -1,0 +1,5 @@
+v1.2 -- 16/10/2014
+	* Restaurar el text obert
+	* Traduccio automatica de accents(majusculas i muinusculas)
+	* Traduccio automatica de Ñ i Ç
+	* Agilitzacio del programa
