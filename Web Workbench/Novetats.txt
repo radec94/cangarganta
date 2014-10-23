@@ -2,7 +2,7 @@ v1.2 -- 16/10/2014
 
 	NUEVO
 	-----------------------------------
-	* Restaurar el text obert
+	* Restaurar el text obert per Html
 	* Traduccio automatica de accents(majusculas i muinusculas)
 	* Traduccio automatica de Ñ i Ç
 	* Agilitzacio del programa
@@ -10,3 +10,18 @@ v1.2 -- 16/10/2014
 	BUG FIX's
 	-----------------------------------
 	* Arreglats problemes amb el "Posicionar ventanas"
+
+v1.2 -- 23/10/2014
+
+	BUG DETECTED
+	----------------------------------
+	* Insertar div
+
+	BUG FIX's
+	-----------------------------------
+	* Arreglats problemes amb el "Restaurar archivo" en Html
+
+The Web Worcbench v1.3 IS COMING
+
+	* Editor de proyectos
+	* Restaurar el text obert per Css
