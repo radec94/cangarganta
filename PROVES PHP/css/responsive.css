@@ -1,0 +1,17 @@
+.responsive {
+   position: relative;  
+   overflow: hidden;
+}
+
+.responsive iframe{
+width: 80%;
+}
+.map {
+	
+	height: 400px;
+}
+
+.calendar {
+	
+	height: 550px;
+}
