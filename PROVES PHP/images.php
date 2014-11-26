@@ -93,15 +93,15 @@
     </header>
     
     <?php
-        function listFolderFilesarg($sdir){
-            $sffs = scandir($dir);
-            $scount = 1;
-            foreach($sffs as $sff){
-                if($sff != '.' && $sff != '..'){
+        function listFolderFilesarg($dir,$dircount){
+            $ffs = scandir($dir);
+            $count = 1;
+            foreach($ffs as $ff){
+                if($ff != '.' && $ff != '..'){
 
-                    if(is_dir($sdir.'/'.$sff)){
+                    if(is_dir($dir.'/'.$ff)){
                         echo '<div class="col-md-4 col-sm-6 portfolio-item">';
-                        echo '  <a href="#portfolioModal'.$scount.'" class="portfolio-link" data-toggle="modal">';
+                        echo '  <a href="#portfolioModal'.$dircount.'-'.$count.'" class="portfolio-link" data-toggle="modal">';
                         echo '      <div class="portfolio-hover">';
                         echo '          <div class="portfolio-hover-content">';
                         echo '              <i class="fa fa-plus fa-3x"></i>';
@@ -110,23 +110,23 @@
                         echo '      <img src="img/portfolio/more.png" class="img-responsive" alt="">';
                         echo '  </a>';
                         echo '  <div class="portfolio-caption">';
-                        echo '      <h4>'.$sff.'</h4>';
-                        echo '      <p class="text-muted">'.$sdir.'/'.$sff.'</p>';
+                        echo '      <h4>'.$ff.'</h4>';
+                        echo '      <p class="text-muted">'.$dir.'/'.$ff.'</p>';
                         echo '  </div>';
                         echo '</div>';
                     }else{
                         echo '<div class="col-md-4 col-sm-6 portfolio-item">';
-                        echo '  <a href="#portfolioModal'.$scount.'" class="portfolio-link" data-toggle="modal">';
+                        echo '  <a href="#portfolioModal'.$dircount.'-'.$count.'" class="portfolio-link" data-toggle="modal">';
                         echo '      <div class="portfolio-hover">';
                         echo '          <div class="portfolio-hover-content">';
                         echo '              <i class="fa fa-plus fa-3x"></i>';
                         echo '          </div>';
                         echo '      </div>';
-                        echo '      <img src="'.$sdir.'/'.$sff.'" class="img-responsive" alt="">';
+                        echo '      <img src="'.$dir.'/'.$ff.'" class="img-responsive" alt="">';
                         echo '  </a>';
                         echo '  <div class="portfolio-caption">';
-                        echo '      <h4>'.$sff.'</h4>';
-                        echo '      <p class="text-muted">'.$sdir.'/'.$sff.'</p>';
+                        echo '      <h4>'.$ff.'</h4>';
+                        echo '      <p class="text-muted">'.$dir.'/'.$ff.'</p>';
                         echo '  </div>';
                         echo '</div>';
                     }
@@ -138,6 +138,7 @@
 
         function listFolderSections($dir){
             $ffs = scandir($dir);
+            $count = 1;
             $switchcolor = true;
             foreach($ffs as $ff){
                 if($ff != '.' && $ff != '..'){
@@ -158,13 +159,14 @@
                         echo '              </div>';
                         echo '          </div>';
                         echo '          <div class="row">';
-                        listFolderFilesarg($dir.'/'.$ff);
+                        listFolderFilesarg($dir.'/'.$ff,$count);
                         echo '          </div>';
                         echo '      </div>';
                         echo '  </section>';
                         echo '  </section>';
                         $switchcolor = !$switchcolor;
                     }
+                    $count = $count +1;
                 }
             }
         }
@@ -226,7 +228,7 @@
     
     
     <?php
-                    function listFilesModals($dir){
+                    function listFilesModals($dir,$dircount){
                         $ffs = scandir($dir);
                         $count = 1;
                         foreach($ffs as $ff){
@@ -235,7 +237,7 @@
                                 if(is_dir($dir.'/'.$ff)){
                                     echo $ff; 
                                 }else{
-                                    echo '<div class="portfolio-modal modal fade" id="portfolioModal'.$count.'" tabindex="-1" role="dialog" aria-hidden="true">';
+                                    echo '<div class="portfolio-modal modal fade" id="portfolioModal'.$dircount.'-'.$count.'" tabindex="-1" role="dialog" aria-hidden="true">';
                                     echo '  <div class="modal-content">';
                                     echo '      <div class="close-modal" data-dismiss="modal">';
                                     echo '          <div class="lr"><div class="rl"></div></div>';
@@ -262,8 +264,21 @@
                             }
                         }
                     }
-                    listFilesModals('img/images');
+                    
 
+                    function listModals($dir){
+                        $ffs = scandir($dir);
+                        $count = 1;
+                        foreach($ffs as $ff){
+                            if($ff != '.' && $ff != '..'){
+                                if(is_dir($dir.'/'.$ff)){
+                                    listFilesModals($dir.'/'.$ff,$count);
+                                }
+                                $count = $count + 1;
+                            }
+                        }
+                    }
+                    listModals('img/images');      
             ?>
     
 
