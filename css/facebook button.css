@@ -1,0 +1,16 @@
+.btn-facebook {
+    border-color: #3b5998;
+    background-color: #3b5998;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #fff;
+}
+.btn-facebook:hover,
+.btn-facebook:focus,
+.btn-facebook:active,
+.btn-facebook.active,
+.open .dropdown-toggle.btn-primary {
+    border-color: #3b7198;
+    color: #fff;
+    background-color: #3b7198;
+}

@@ -68,6 +68,10 @@ h6 {
     background-color: #222;
 }
 
+.bg-gray {
+    background-color: #d2d6d9;
+}
+
 .btn-primary {
     border-color: #fed136;
     text-transform: uppercase;
