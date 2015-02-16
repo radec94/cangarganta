@@ -99,22 +99,7 @@
             foreach($ffs as $ff){
                 if($ff != '.' && $ff != '..'){
 
-                    if(is_dir($dir.'/'.$ff)){
-                        echo '<div class="col-md-4 col-sm-6 portfolio-item">';
-                        echo '  <a href="#portfolioModal'.$dircount.'-'.$count.'" class="portfolio-link" data-toggle="modal">';
-                        echo '      <div class="portfolio-hover">';
-                        echo '          <div class="portfolio-hover-content">';
-                        echo '              <i class="fa fa-plus fa-3x"></i>';
-                        echo '          </div>';
-                        echo '      </div>';
-                        echo '      <img src="img/portfolio/more.png" class="img-responsive" alt="">';
-                        echo '  </a>';
-                        echo '  <div class="portfolio-caption">';
-                        echo '      <h4>'.$ff.'</h4>';
-                        echo '      <p class="text-muted">'.$dir.'/'.$ff.'</p>';
-                        echo '  </div>';
-                        echo '</div>';
-                    }else{
+                    if(!is_dir($dir.'/'.$ff)){
                         echo '<div class="col-md-4 col-sm-6 portfolio-item">';
                         echo '  <a href="#portfolioModal'.$dircount.'-'.$count.'" class="portfolio-link" data-toggle="modal">';
                         echo '      <div class="portfolio-hover">';
@@ -124,9 +109,9 @@
                         echo '      </div>';
                         echo '      <img src="'.$dir.'/'.$ff.'" class="img-responsive" alt="">';
                         echo '  </a>';
-                        echo '  <div class="portfolio-caption">';
-                        echo '      <h4>'.$ff.'</h4>';
-                        echo '      <p class="text-muted">'.$dir.'/'.$ff.'</p>';
+                        echo '  <div class="portfolio-caption">';              
+                        echo '      <h4>'.pathinfo($dir.'/'.$ff, PATHINFO_FILENAME).'</h4>';
+                     
                         echo '  </div>';
                         echo '</div>';
                     }
