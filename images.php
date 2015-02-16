@@ -16,8 +16,7 @@
     <!-- Custom CSS -->
     <link href="css/agency.css" rel="stylesheet">
     <link href="css/circlebutton.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet"> 
-    <link href="css/facebook button.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -83,18 +82,16 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in"> Benvinguts a</div>
+                <div class="intro-lead-in">&nbsp;</div>
                 <div class="intro-heading">Can Garganta</div>
-                <div class="intro-lead-in">
-                <a href="https://www.facebook.com/cangarganta"><button type="button" class="btn btn-facebook btn-lg fa fa-facebook">&nbsp;&nbsp;Facebook</button></a>      
-	           </div>
-<a href="#services" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
+                <div class="intro-lead-in">&nbsp;</div>
+                <a href="#portfolio" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
                 </a>
             </div>
         </div>
     </header>
-    <!--  Sections Generated -->
+    
     <?php
         function listFolderFilesarg($dir,$dircount){
             $ffs = scandir($dir);
@@ -102,22 +99,7 @@
             foreach($ffs as $ff){
                 if($ff != '.' && $ff != '..'){
 
-                    if(is_dir($dir.'/'.$ff)){
-                        echo '<div class="col-md-4 col-sm-6 portfolio-item">';
-                        echo '  <a href="#portfolioModal'.$dircount.'-'.$count.'" class="portfolio-link" data-toggle="modal">';
-                        echo '      <div class="portfolio-hover">';
-                        echo '          <div class="portfolio-hover-content">';
-                        echo '              <i class="fa fa-plus fa-3x"></i>';
-                        echo '          </div>';
-                        echo '      </div>';
-                        echo '      <img src="img/portfolio/more.png" class="img-responsive" alt="">';
-                        echo '  </a>';
-                        echo '  <div class="portfolio-caption">';
-                        echo '      <h4>'.$ff.'</h4>';
-                        echo '      <p class="text-muted">'.$dir.'/'.$ff.'</p>';
-                        echo '  </div>';
-                        echo '</div>';
-                    }else{
+                    if(!is_dir($dir.'/'.$ff)){
                         echo '<div class="col-md-4 col-sm-6 portfolio-item">';
                         echo '  <a href="#portfolioModal'.$dircount.'-'.$count.'" class="portfolio-link" data-toggle="modal">';
                         echo '      <div class="portfolio-hover">';
@@ -127,9 +109,9 @@
                         echo '      </div>';
                         echo '      <img src="'.$dir.'/'.$ff.'" class="img-responsive" alt="">';
                         echo '  </a>';
-                        echo '  <div class="portfolio-caption">';
-                        echo '      <h4>'.$ff.'</h4>';
-                        echo '      <p class="text-muted">'.$dir.'/'.$ff.'</p>';
+                        echo '  <div class="portfolio-caption">';              
+                        echo '      <h4>'.pathinfo($dir.'/'.$ff, PATHINFO_FILENAME).'</h4>';
+                     
                         echo '  </div>';
                         echo '</div>';
                     }
@@ -175,7 +157,34 @@
         }
         listFolderSections('img/images');
     ?>
-    <!-- End Sections Generated -->
+    
+    
+    
+    
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Fotos</h2>
+                    <h3 class="section-subheading text-muted">Imatges dels interiors i exteriors de la casa.</h3>
+                </div>
+            </div>
+            <div class="row">
+                
+                
+                <?php
+                    
+                    listFolderFilesarg('img/images');
+            ?>
+                
+                
+                
+                
+            </div>
+        </div>
+    </section>
+
    
 
     <footer>
@@ -186,7 +195,7 @@
                 </div>
                 <div class="col-md-6">
                     <ul class="list-inline">
-                        <li><a class="index.html"><img  src="img/icons/Flag-CAT.png" width="40"></a>
+                        <li><a class="page-scroll" href="#page-top"><img  src="img/icons/Flag-CAT.png" width="40"></a>
                         </li>
                         <li><a href="index-es.html"><img src="img/icons/Flag-ESP.png" width="40"></a>
                         </li>
