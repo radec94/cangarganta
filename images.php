@@ -140,7 +140,6 @@
                         echo '          <div class="row">';
                         echo '              <div class="col-lg-12 text-center">';
                         echo '                  <h2 class="section-heading">'.$ff.'</h2>';
-                        echo '                  <h3 class="section-subheading text-muted">'.$dir.'/'.$ff.'</h3>';
                         echo '              </div>';
                         echo '          </div>';
                         echo '          <div class="row">';
@@ -157,33 +156,6 @@
         }
         listFolderSections('img/images');
     ?>
-    
-    
-    
-    
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Fotos</h2>
-                    <h3 class="section-subheading text-muted">Imatges dels interiors i exteriors de la casa.</h3>
-                </div>
-            </div>
-            <div class="row">
-                
-                
-                <?php
-                    
-                    listFolderFilesarg('img/images');
-            ?>
-                
-                
-                
-                
-            </div>
-        </div>
-    </section>
 
    
 
@@ -231,11 +203,8 @@
                                     echo '          <div class="row">';
                                     echo '              <div class="col-lg-8 col-lg-offset-2">';
                                     echo '                  <div class="modal-body">';
-                                    echo '                      <h2>'.$ff.'</h2>';
-                                    echo '                      <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>';
+                                    echo '                      <h2>'.pathinfo($dir.'/'.$ff, PATHINFO_FILENAME).'</h2>';
                                     echo '                      <img class="img-responsive img-centered" src="'.$dir.'/'.$ff.'" alt="">';
-                                    echo '                      <p>Text goes hereeee - is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>';
-                                    
                                     echo '                      <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Retorna </button>';
                                     echo '                  </div>';
                                     echo '              </div>';
