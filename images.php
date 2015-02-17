@@ -47,7 +47,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html#page-top">Can Garganta</a>
+                <?php
+                    if ($_GET["lang"] == "cat")
+                    {
+                        echo '<a class="navbar-brand" href="index.html#page-top">Can Garganta</a>';
+                    }
+                    else if ($_GET["lang"] == "es")
+                    {
+                        echo '<a class="navbar-brand" href="index-es.html#page-top">Can Garganta</a>';
+                    }
+                    else
+                    {
+                        echo '<a class="navbar-brand" href="index-en.html#page-top">Can Garganta</a>';
+                    }
+                ?>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
