@@ -50,15 +50,15 @@
                 <?php
                     if ($_GET["lang"] == "cat")
                     {
-                        echo '<a class="navbar-brand" href="index.html#page-top">Can Garganta</a>';
+                        echo '<a  class="page-scroll" href="index.html#page-top"><img src=http://i.imgur.com/8QeMINm.png></a>';
                     }
                     else if ($_GET["lang"] == "es")
                     {
-                        echo '<a class="navbar-brand" href="index-es.html#page-top">Can Garganta</a>';
+                        echo '<a  class="page-scroll" href="index-es.html#page-top"><img src=http://i.imgur.com/8QeMINm.png></a>';
                     }
                     else
                     {
-                        echo '<a class="navbar-brand" href="index-en.html#page-top">Can Garganta</a>';
+                        echo '<a  class="page-scroll" href="index-en.html#page-top"><img src=http://i.imgur.com/8QeMINm.png></a>';
                     }
                 ?>
             </div>
