@@ -1,0 +1,3 @@
+* escalar a petit la foto de portada
+* java de conctacte per cada idioma
+* posar les dades de contacte
